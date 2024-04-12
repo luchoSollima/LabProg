@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	enum {
+		Rock = 1,
+		Paper,
+		Scissor
+	};
+
+	int playerChoice = 0;
+	
+	std::cout << "Rock, Paper, Scissor" << endl;
+	std::cout << "Escribi una de las tres opciones para jugar." << endl;
+
+	
+}
