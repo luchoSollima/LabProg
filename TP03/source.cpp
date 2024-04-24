@@ -60,6 +60,7 @@ int main()
 			if (dieFace == 1)
 			{
 				player1TempScore = player1Score;
+				cout << "Perdiste los puntos de la ronda! Volves al puntaje anotado." << endl;
 			}
 			else
 			{
