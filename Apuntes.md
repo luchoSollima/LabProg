@@ -14,6 +14,7 @@ Inciializar todas las variables.
 Espaciar un poco mas el codigo para la legibilidad.
 Habia un bug porque me olvide de escribir un break. Testear más rigurosamente.
 Revisar la posiblidad de clearear la pantalla cuando termina la ronda.
+El .cpp se debe llamar main.cpp.
 
 El resto bien, logica correcta.
 ```
