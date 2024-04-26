@@ -10,6 +10,7 @@ CLASE 26/04/2024
 
 TP4: Ahora se arranca el tema arrays. Juego a realizar: "Mastermind".
 
+``
 Devoluciones tp2:
 
 Poner comentarios en el codigo.
@@ -19,7 +20,7 @@ Habia un bug porque me olvide de escribir un break. Testear más rigurosamente.
 Revisar la posiblidad de clearear la pantalla cuando termina la ronda.
 
 El resto bien, logica correcta.
-
+``
 
 Aprovechar el enum casteandolo a int, antes del switch.
 
