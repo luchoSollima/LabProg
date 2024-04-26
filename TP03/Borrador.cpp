@@ -94,7 +94,6 @@ int main()
 
 				if (userDecision == 1 && player1TempScore >= minSavedScore)
 				{
-					playerAchievedMinScore = true;
 					player1Score = player1TempScore;
 					cout << "Puntaje anotado: " << player1Score << endl << endl;
 					system("pause");
@@ -151,13 +150,10 @@ int main()
 					cout << endl;
 				}
 
-				if (playerAchievedMinScore == false)
-					break;
 
-			} while (userDecision == 2 && playerAchievedMinScore == true);
+			} while (userDecision == 2);
 
 			dieFace = 0;
-			playerAchievedMinScore = false;
 			system("cls");
 
 			do 
@@ -180,7 +176,6 @@ int main()
 
 				if (userDecision == 1 && player2TempScore >= minSavedScore)
 				{
-					playerAchievedMinScore = true;
 					player2Score = player2TempScore;
 					cout << "Puntaje anotado: " << player2Score << endl << endl;
 					system("pause");
@@ -234,13 +229,9 @@ int main()
 					cout << endl;
 				}
 
-				if (playerAchievedMinScore == false)
-					break;
-
-			} while (userDecision == 2 && playerAchievedMinScore == true);
+			} while (userDecision == 2);
 
 			dieFace = 0;
-			playerAchievedMinScore = false;
 			system("cls");
 
 		} while (player1TempScore <= 101 && player2TempScore <= 101);
