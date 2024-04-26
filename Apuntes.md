@@ -10,7 +10,7 @@ CLASE 26/04/2024
 
 TP4: Ahora se arranca el tema arrays. Juego a realizar: "Mastermind".
 
-``
+``bash
 Devoluciones tp2:
 
 Poner comentarios en el codigo.
