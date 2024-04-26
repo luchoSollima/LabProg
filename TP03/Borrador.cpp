@@ -15,7 +15,6 @@ int main()
 	int userDecision = 0;
 	bool player1Win = false;
 	bool player2Win = false;
-	bool playerAchievedMinScore = false;
 
 	cout << "Bienvendio al juego 101!" << endl;
 
@@ -81,8 +80,10 @@ int main()
 				cout << "Puntaje en el turno: " << player1TempScore << endl;
 				cout << "--------------------------" << endl << endl;
 				cout << "Queres anotar los puntos ganados hasta ahora o seguir lanzando? (Si no llegaste al minimo puntaje para anotar puntos solo podes lanzar el dado)" << endl;
-				cout << "1. Anotar los puntos." << endl;
-				cout << "2. Lanzar dado." << endl;
+				cout << "1. Lanzar dado." << endl;
+				if (player1TempScore >= minSavedScore)
+					cout << "2. Anotar los puntos." << endl;
+
 				cin >> userDecision;
 				cout << endl;
 
@@ -92,7 +93,7 @@ int main()
 					cin >> userDecision;
 				}
 
-				if (userDecision == 1 && player1TempScore >= minSavedScore)
+				if (userDecision == 2 && player1TempScore >= minSavedScore)
 				{
 					player1Score = player1TempScore;
 					cout << "Puntaje anotado: " << player1Score << endl << endl;
@@ -148,10 +149,11 @@ int main()
 
 					system("pause");
 					cout << endl;
+
 				}
 
 
-			} while (userDecision == 2);
+			} while (userDecision == 1 && player1TempScore >= minSavedScore);
 
 			dieFace = 0;
 			system("cls");
@@ -163,8 +165,10 @@ int main()
 				cout << "Puntaje en el turno: " << player2TempScore << endl;
 				cout << "--------------------------" << endl << endl;
 				cout << "Queres anotar los puntos ganados hasta ahora o seguir lanzando? (Si no llegaste al minimo puntaje para anotar puntos solo podes lanzar el dado)" << endl;
-				cout << "1. Anotar los puntos." << endl;
-				cout << "2. Lanzar dado." << endl;
+				cout << "1. Lanzar dado." << endl;
+				if (player2TempScore >= minSavedScore)
+					cout << "2. Anotar los puntos." << endl;
+
 				cin >> userDecision;
 				cout << endl;
 
@@ -174,7 +178,7 @@ int main()
 					cin >> userDecision;
 				}
 
-				if (userDecision == 1 && player2TempScore >= minSavedScore)
+				if (userDecision == 2 && player2TempScore >= minSavedScore)
 				{
 					player2Score = player2TempScore;
 					cout << "Puntaje anotado: " << player2Score << endl << endl;
@@ -229,7 +233,7 @@ int main()
 					cout << endl;
 				}
 
-			} while (userDecision == 2);
+			} while (userDecision == 1 && player2TempScore >= minSavedScore);
 
 			dieFace = 0;
 			system("cls");
