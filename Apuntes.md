@@ -25,3 +25,4 @@ TP3: Falta checkear condiciones para ganar y corroborar que el turno de cada jug
 
 ### CLASE 03/05/2024
 
+Para el tp5, no usar arrays bidimensionales. No conviene.
