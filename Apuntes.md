@@ -22,3 +22,6 @@ El resto bien, logica correcta.
 Aprovechar el enum casteandolo a int, antes del switch.
 
 TP3: Falta checkear condiciones para ganar y corroborar que el turno de cada jugador termina cuando debe (ejemplo, si sacas 1 en el dado termina tu turno. Revisarlo con el reglamento del juego.)
+
+### CLASE 03/05/2024
+
