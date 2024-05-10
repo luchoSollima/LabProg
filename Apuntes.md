@@ -41,7 +41,7 @@ Nonograma: https://es.goobix.com/juegos-en-linea/nonogramas/?s=5
 
 Hacerlo secuencialmente, ejemplo: patron 1 2: Pintas la primera casilla, dejas un espacio, y pintas dos casillas. El resto vacío. Asi para cada fila.
 
-Sumatoria del patron Y los espacios vacios tiene que dar 15.
+Sumatoria del patron Y los espacios vacios tiene que dar 15. La sumatoria correcta seria los numeros, mas 1 por cada uno (representando el espacio vacío que le sigue).
 
 ```bash
 Devoluciones tp3:
