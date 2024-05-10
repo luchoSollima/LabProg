@@ -16,6 +16,8 @@ int main()
 	int userInput = 0;
 	int digit = 0;
 	int maxPatternNumber = 0;
+	int tempNum = 0;
+	int tempNum2 = 0;
 	bool maxPatternNumberExceeded = false;
 
 	cout << "Bienvenido al creador de tablero del Nonograma!" << endl;
@@ -54,7 +56,10 @@ int main()
 
 	for (int i = limArray - 1; i >= 0; i--)
 	{
-		cout << firstRow[i] << ", ";
+		if (firstRow[i] != 0)
+		{
+
+		}
 	}
 
 	cout << endl;
