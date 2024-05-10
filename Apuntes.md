@@ -35,6 +35,8 @@ TP1, TP2 no tienen nota numérica.
 
 No hay que olvidar la autoevaluación.
 
+TP5: Un array por cada fila.
+
 ```bash
 Devoluciones tp3:
 
