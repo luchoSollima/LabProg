@@ -39,6 +39,8 @@ TP5: Un array por cada fila.
 
 Nonograma: https://es.goobix.com/juegos-en-linea/nonogramas/?s=5
 
+Hacerlo secuencialmente, ejemplo: patron 1 2: Pintas la primera casilla, dejas un espacio, y pintas dos casillas. El resto vacío. Asi para cada fila.
+
 ```bash
 Devoluciones tp3:
 
