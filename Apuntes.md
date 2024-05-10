@@ -37,6 +37,8 @@ No hay que olvidar la autoevaluación.
 
 TP5: Un array por cada fila.
 
+Nonograma: https://es.goobix.com/juegos-en-linea/nonogramas/?s=5
+
 ```bash
 Devoluciones tp3:
 
