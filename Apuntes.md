@@ -30,3 +30,12 @@ Para el tp5, no usar arrays bidimensionales. No conviene.
 17/5 Parcial.
 
 TP1, TP2 no tienen nota numérica.
+
+### CLASE 10/05/2024
+
+No hay que olvidar la autoevaluación.
+
+```bash
+Devoluciones tp3:
+
+```
