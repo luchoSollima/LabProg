@@ -43,6 +43,8 @@ Hacerlo secuencialmente, ejemplo: patron 1 2: Pintas la primera casilla, dejas u
 
 Sumatoria del patron Y los espacios vacios tiene que dar 15. La sumatoria correcta seria los numeros, mas 1 por cada uno (representando el espacio vacío que le sigue).
 
+También dejarle al usuario no completar la fila si no desea, mas alla de los casos donde no se puede.
+
 ```bash
 Devoluciones tp3:
 
