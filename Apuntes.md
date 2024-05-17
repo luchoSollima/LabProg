@@ -45,6 +45,8 @@ Sumatoria del patron Y los espacios vacios tiene que dar 15. La sumatoria correc
 
 También dejarle al usuario no completar la fila si no desea, mas alla de los casos donde no se puede.
 
+### CLASE 17/05/2024
+
 ```bash
 Devoluciones tp3:
 
