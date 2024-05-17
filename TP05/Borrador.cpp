@@ -16,19 +16,24 @@ int main()
 	int userInput = 0;
 	int digit = 0;
 	int maxPatternNumber = 0;
-	int tempCounter = 0;
+	int printCounter = 0;
 	int arrayIndexCounter = 0;
-	int blankCellCounter = 0;
-	bool maxPatternNumberExceeded = true;
+	bool maxPatternNumberExceeded = true; // Cambiar nombre.
+	bool firstPrint = true;
 
 	cout << "Bienvenido al creador de tablero del Nonograma!" << endl;
-	cout << "Explicacion." << endl;
+	cout << "\nEste programa arma un tablero de Nonograma a partir del ingreso de los patrones de las filas. Los valores validos para los numeros del patron son de 0-15." << endl << endl;
+
+	system("pause");
+	system("cls");
 
 	cout << "Ingrese el patron para la primera fila:" << endl;
 	cout << "Ingrese un numero del patron (ingrese 0 si desea dejar el resto de la fila vacia)." << endl;
 
 	do
 	{
+		if (!firstPrint)
+			cout << "Todavia queda espacio en la fila. Quiere ingresar otro numero o pasar de fila (ingrese 0 para pasar de fila)?" << endl;
 
 		cin >> userInput;
 
@@ -42,7 +47,6 @@ int main()
 			if (maxPatternNumber != limArray)
 			{
 				maxPatternNumber += 1;
-				//blankCellCounter++;
 			}
 		}
 
@@ -54,25 +58,28 @@ int main()
 			maxPatternNumberExceeded = true;
 			maxPatternNumber -= firstRow[arrayIndexCounter] + 1;
 			arrayIndexCounter--;
-			//blankCellCounter--;
 			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
 		}
 
 		arrayIndexCounter++;
+		firstPrint = false;
 
 	} while (maxPatternNumberExceeded && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
 	maxPatternNumberExceeded = true;
+	firstPrint = true;
 
-	//cout << "Casillas blancas: " << blankCellCounter << endl;
+	system("cls");
 
 	cout << "Ingrese el patron para la segunda fila:" << endl;
 	cout << "Ingrese un numero del patron (ingrese 0 si desea dejar el resto de la fila vacia)." << endl;
 
 	do
 	{
+		if (!firstPrint)
+			cout << "Todavia queda espacio en la fila. Quiere ingresar otro numero o pasar de fila (ingrese 0 para pasar de fila)?" << endl;
 
 		cin >> userInput;
 
@@ -84,8 +91,9 @@ int main()
 			maxPatternNumber += secondRow[arrayIndexCounter];
 
 			if (maxPatternNumber != limArray)
+			{
 				maxPatternNumber += 1;
-
+			}
 		}
 
 		if (maxPatternNumber == limArray)
@@ -100,18 +108,24 @@ int main()
 		}
 
 		arrayIndexCounter++;
+		firstPrint = false;
 
 	} while (maxPatternNumberExceeded && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
 	maxPatternNumberExceeded = true;
+	firstPrint = true;
+
+	system("cls");
 
 	cout << "Ingrese el patron para la tercera fila:" << endl;
 	cout << "Ingrese un numero del patron (ingrese 0 si desea dejar el resto de la fila vacia)." << endl;
 
 	do
 	{
+		if (!firstPrint)
+			cout << "Todavia queda espacio en la fila. Quiere ingresar otro numero o pasar de fila (ingrese 0 para pasar de fila)?" << endl;
 
 		cin >> userInput;
 
@@ -123,8 +137,9 @@ int main()
 			maxPatternNumber += thirdRow[arrayIndexCounter];
 
 			if (maxPatternNumber != limArray)
+			{
 				maxPatternNumber += 1;
-
+			}
 		}
 
 		if (maxPatternNumber == limArray)
@@ -139,18 +154,24 @@ int main()
 		}
 
 		arrayIndexCounter++;
+		firstPrint = false;
 
 	} while (maxPatternNumberExceeded && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
 	maxPatternNumberExceeded = true;
+	firstPrint = true;
+
+	system("cls");
 	
 	cout << "Ingrese el patron para la cuarta fila:" << endl;
 	cout << "Ingrese un numero del patron (ingrese 0 si desea dejar el resto de la fila vacia)." << endl;
 
 	do
 	{
+		if (!firstPrint)
+			cout << "Todavia queda espacio en la fila. Quiere ingresar otro numero o pasar de fila (ingrese 0 para pasar de fila)?" << endl;
 
 		cin >> userInput;
 
@@ -162,8 +183,9 @@ int main()
 			maxPatternNumber += fourthRow[arrayIndexCounter];
 
 			if (maxPatternNumber != limArray)
+			{
 				maxPatternNumber += 1;
-
+			}
 		}
 
 		if (maxPatternNumber == limArray)
@@ -178,18 +200,24 @@ int main()
 		}
 
 		arrayIndexCounter++;
+		firstPrint = false;
 
 	} while (maxPatternNumberExceeded && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
 	maxPatternNumberExceeded = true;
+	firstPrint = true;
+
+	system("cls");
 
 	cout << "Ingrese el patron para la quinta fila:" << endl;
 	cout << "Ingrese un numero del patron (ingrese 0 si desea dejar el resto de la fila vacia)." << endl;
 
 	do
 	{
+		if (!firstPrint)
+			cout << "Todavia queda espacio en la fila. Quiere ingresar otro numero o pasar de fila (ingrese 0 para pasar de fila)?" << endl;
 
 		cin >> userInput;
 
@@ -201,8 +229,9 @@ int main()
 			maxPatternNumber += fifthRow[arrayIndexCounter];
 
 			if (maxPatternNumber != limArray)
+			{
 				maxPatternNumber += 1;
-
+			}
 		}
 
 		if (maxPatternNumber == limArray)
@@ -217,10 +246,11 @@ int main()
 		}
 
 		arrayIndexCounter++;
+		firstPrint = false;
 
 	} while (maxPatternNumberExceeded && userInput != 0);
 
-
+	system("cls");
 
 
 
@@ -246,24 +276,24 @@ int main()
 			for (int j = 0; j < firstRow[i]; j++)
 			{
 				cout << blackCell;
-				tempCounter++;
+				printCounter++;
 			}
-			if (tempCounter != limArray)
+			if (printCounter != limArray)
 			{
 				cout << blankCell;
-				tempCounter++;
+				printCounter++;
 			}
 
 		}
 	}
 
-	while (tempCounter != limArray)
+	while (printCounter != limArray)
 	{
 		cout << blankCell;
-		tempCounter++;
+		printCounter++;
 	}
 
-	tempCounter = 0;
+	printCounter = 0;
 	cout << endl;
 
 	for (int i = 0; i < limArray; i++)
@@ -286,24 +316,24 @@ int main()
 			for (int j = 0; j < secondRow[i]; j++)
 			{
 				cout << blackCell;
-				tempCounter++;
+				printCounter++;
 			}
-			if (tempCounter != limArray)
+			if (printCounter != limArray)
 			{
 				cout << blankCell;
-				tempCounter++;
+				printCounter++;
 			}
 
 		}
 	}
 
-	while (tempCounter != limArray)
+	while (printCounter != limArray)
 	{
 		cout << blankCell;
-		tempCounter++;
+		printCounter++;
 	}
 
-	tempCounter = 0;
+	printCounter = 0;
 	cout << endl;
 
 	for (int i = 0; i < limArray; i++)
@@ -326,24 +356,24 @@ int main()
 			for (int j = 0; j < thirdRow[i]; j++)
 			{
 				cout << blackCell;
-				tempCounter++;
+				printCounter++;
 			}
-			if (tempCounter != limArray)
+			if (printCounter != limArray)
 			{
 				cout << blankCell;
-				tempCounter++;
+				printCounter++;
 			}
 
 		}
 	}
 
-	while (tempCounter != limArray)
+	while (printCounter != limArray)
 	{
 		cout << blankCell;
-		tempCounter++;
+		printCounter++;
 	}
 
-	tempCounter = 0;
+	printCounter = 0;
 	cout << endl;
 
 	for (int i = 0; i < limArray; i++)
@@ -366,24 +396,24 @@ int main()
 			for (int j = 0; j < fourthRow[i]; j++)
 			{
 				cout << blackCell;
-				tempCounter++;
+				printCounter++;
 			}
-			if (tempCounter != limArray)
+			if (printCounter != limArray)
 			{
 				cout << blankCell;
-				tempCounter++;
+				printCounter++;
 			}
 
 		}
 	}
 
-	while (tempCounter != limArray)
+	while (printCounter != limArray)
 	{
 		cout << blankCell;
-		tempCounter++;
+		printCounter++;
 	}
 
-	tempCounter = 0;
+	printCounter = 0;
 	cout << endl;
 
 	for (int i = 0; i < limArray; i++)
@@ -406,24 +436,24 @@ int main()
 			for (int j = 0; j < fifthRow[i]; j++)
 			{
 				cout << blackCell;
-				tempCounter++;
+				printCounter++;
 			}
-			if (tempCounter != limArray)
+			if (printCounter != limArray)
 			{
 				cout << blankCell;
-				tempCounter++;
+				printCounter++;
 			}
 
 		}
 	}
 
-	while (tempCounter != limArray)
+	while (printCounter != limArray)
 	{
 		cout << blankCell;
-		tempCounter++;
+		printCounter++;
 	}
 
-	tempCounter = 0;
+	printCounter = 0;
 	cout << endl;
 
 }
