@@ -58,7 +58,7 @@ La forma de tomar el input del usuario es inusual pero valida. Recomnedado: step
 Faltaba la condicion minima de jugar contra la maquina (esto lo termino desaprobando).
 ColorCodeInput no se compara en ningun momento, el juego depende más de lo que debería de los jugadores.
 No utilizo el enum (porque el switch esta casteando).
-Hay Spanglish con las variables y el enum.
+Hay Spanglish entre las variables, los comentarios y el enum. Todo inglés la próxima.
 
 El codigo esta bien en si y la presentiacion
 ```
