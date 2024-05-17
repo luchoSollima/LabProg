@@ -59,6 +59,7 @@ Faltaba la condicion minima de jugar contra la maquina (esto lo termino desaprob
 ColorCodeInput no se compara en ningun momento, el juego depende más de lo que debería de los jugadores.
 No utilizo el enum (porque el switch esta casteando).
 Hay Spanglish entre las variables, los comentarios y el enum. Todo inglés la próxima.
+Y claro, falta la autoevaluación.
 
-El codigo esta bien en si y la presentiacion
+El codigo esta bien en si y la presentiacion también.
 ```
