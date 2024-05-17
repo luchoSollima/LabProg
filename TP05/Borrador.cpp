@@ -18,7 +18,7 @@ int main()
 	int maxPatternNumber = 0;
 	int printCounter = 0;
 	int arrayIndexCounter = 0;
-	bool maxPatternNumberExceeded = true; // Cambiar nombre.
+	bool maxPatternNumberReached = false;
 	bool firstPrint = true;
 
 	cout << "Bienvenido al creador de tablero del Nonograma!" << endl;
@@ -51,11 +51,10 @@ int main()
 		}
 
 		if (maxPatternNumber == limArray)
-			maxPatternNumberExceeded = false;
+			maxPatternNumberReached = true;
 
 		if (maxPatternNumber > limArray && userInput != 0)
 		{
-			maxPatternNumberExceeded = true;
 			maxPatternNumber -= firstRow[arrayIndexCounter] + 1;
 			arrayIndexCounter--;
 			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
@@ -64,11 +63,11 @@ int main()
 		arrayIndexCounter++;
 		firstPrint = false;
 
-	} while (maxPatternNumberExceeded && userInput != 0);
+	} while (!maxPatternNumberReached && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
-	maxPatternNumberExceeded = true;
+	maxPatternNumberReached = true;
 	firstPrint = true;
 
 	system("cls");
@@ -97,11 +96,10 @@ int main()
 		}
 
 		if (maxPatternNumber == limArray)
-			maxPatternNumberExceeded = false;
+			maxPatternNumberReached = true;
 
 		if (maxPatternNumber > limArray && userInput != 0)
 		{
-			maxPatternNumberExceeded = true;
 			maxPatternNumber -= secondRow[arrayIndexCounter] + 1;
 			arrayIndexCounter--;
 			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
@@ -110,11 +108,11 @@ int main()
 		arrayIndexCounter++;
 		firstPrint = false;
 
-	} while (maxPatternNumberExceeded && userInput != 0);
+	} while (maxPatternNumberReached && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
-	maxPatternNumberExceeded = true;
+	maxPatternNumberReached = true;
 	firstPrint = true;
 
 	system("cls");
@@ -143,11 +141,10 @@ int main()
 		}
 
 		if (maxPatternNumber == limArray)
-			maxPatternNumberExceeded = false;
+			maxPatternNumberReached = true;
 
 		if (maxPatternNumber > limArray && userInput != 0)
 		{
-			maxPatternNumberExceeded = true;
 			maxPatternNumber -= thirdRow[arrayIndexCounter] + 1;
 			arrayIndexCounter--;
 			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
@@ -156,11 +153,11 @@ int main()
 		arrayIndexCounter++;
 		firstPrint = false;
 
-	} while (maxPatternNumberExceeded && userInput != 0);
+	} while (maxPatternNumberReached && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
-	maxPatternNumberExceeded = true;
+	maxPatternNumberReached = true;
 	firstPrint = true;
 
 	system("cls");
@@ -189,11 +186,10 @@ int main()
 		}
 
 		if (maxPatternNumber == limArray)
-			maxPatternNumberExceeded = false;
+			maxPatternNumberReached = true;
 
 		if (maxPatternNumber > limArray && userInput != 0)
 		{
-			maxPatternNumberExceeded = true;
 			maxPatternNumber -= fourthRow[arrayIndexCounter] + 1;
 			arrayIndexCounter--;
 			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
@@ -202,11 +198,11 @@ int main()
 		arrayIndexCounter++;
 		firstPrint = false;
 
-	} while (maxPatternNumberExceeded && userInput != 0);
+	} while (maxPatternNumberReached && userInput != 0);
 
 	arrayIndexCounter = 0;
 	maxPatternNumber = 0;
-	maxPatternNumberExceeded = true;
+	maxPatternNumberReached = true;
 	firstPrint = true;
 
 	system("cls");
@@ -235,11 +231,10 @@ int main()
 		}
 
 		if (maxPatternNumber == limArray)
-			maxPatternNumberExceeded = false;
+			maxPatternNumberReached = true;
 
 		if (maxPatternNumber > limArray && userInput != 0)
 		{
-			maxPatternNumberExceeded = true;
 			maxPatternNumber -= fifthRow[arrayIndexCounter] + 1;
 			arrayIndexCounter--;
 			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
@@ -248,13 +243,13 @@ int main()
 		arrayIndexCounter++;
 		firstPrint = false;
 
-	} while (maxPatternNumberExceeded && userInput != 0);
+	} while (maxPatternNumberReached && userInput != 0);
 
 	system("cls");
 
 
 
-	// Impresión.
+	// Print.
 
 	for (int i = 0; i < limArray; i++)
 	{
