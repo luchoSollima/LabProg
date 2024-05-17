@@ -50,6 +50,15 @@ También dejarle al usuario no completar la fila si no desea, mas alla de los ca
 Material en BlackBoard, Do(s) y Don't(s).
 
 ```bash
-Devoluciones tp3:
+Devoluciones tp4 (3):
 
+Poner comentarios arriba del codigo, no al costado.
+Se pueden repetir colores, se puede dar un feedback incompleto ("OOO") o un feedback incorrecto ("a") y el juego sigue. Tambien se puede ingresar cualquier numero, no solo un numero de cuatro digitos para el codigo de colores.
+La forma de tomar el input del usuario es inusual pero valida. Recomnedado: step by step, numero por numero.
+Faltaba la condicion minima de jugar contra la maquina (esto lo termino desaprobando).
+ColorCodeInput no se compara en ningun momento, el juego depende más de lo que debería de los jugadores.
+No utilizo el enum (porque el switch esta casteando).
+Hay Spanglish con las variables y el enum.
+
+El codigo esta bien en si y la presentiacion
 ```
