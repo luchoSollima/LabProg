@@ -47,6 +47,8 @@ También dejarle al usuario no completar la fila si no desea, mas alla de los ca
 
 ### CLASE 17/05/2024
 
+Material en BlackBoard, Do(s) y Don't(s).
+
 ```bash
 Devoluciones tp3:
 
