@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-	const int limArray = 5;
+	const int limArray = 15;
 	int firstRow[limArray] = { };
 	int secondRow[limArray] = { };
 	int thirdRow[limArray] = { };
@@ -28,6 +28,8 @@ int main()
 
 	do
 	{
+		maxPatternNumberExceeded = false;
+
 		cin >> userInput;
 
 		for (int i = 0; i < limArray; i++)
@@ -54,17 +56,169 @@ int main()
 		{
 			maxPatternNumberExceeded = true;
 			maxPatternNumber = 0;
-			cout << "Cantidad incorrecta de numeros. Ingrese nuevamente el patron:" << endl;
+			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
 		}
 
 	} while (maxPatternNumberExceeded);
 
-	for (int i = limArray - 1; i >= 0; i--)
+	maxPatternNumber = 0;
+	cout << "Ingrese el patron para la segunda fila:" << endl;
+
+	do
+	{
+		maxPatternNumberExceeded = false;
+
+		cin >> userInput;
+
+		for (int i = 0; i < limArray; i++)
+		{
+			digit = userInput % 10;
+			secondRow[i] = digit;
+			userInput /= 10;
+		}
+
+		for (int i = 0; i < limArray; i++)
+		{
+			if (secondRow[i] != 0)
+			{
+
+				maxPatternNumber += secondRow[i];
+
+				if (maxPatternNumber != limArray)
+					maxPatternNumber += 1;
+
+			}
+		}
+
+		if (maxPatternNumber > limArray)
+		{
+			maxPatternNumberExceeded = true;
+			maxPatternNumber = 0;
+			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
+		}
+
+	} while (maxPatternNumberExceeded);
+
+	maxPatternNumber = 0;
+	cout << "Ingrese el patron para la tercera fila:" << endl;
+
+	do
+	{
+		maxPatternNumberExceeded = false;
+
+		cin >> userInput;
+
+		for (int i = 0; i < limArray; i++)
+		{
+			digit = userInput % 10;
+			thirdRow[i] = digit;
+			userInput /= 10;
+		}
+
+		for (int i = 0; i < limArray; i++)
+		{
+			if (thirdRow[i] != 0)
+			{
+
+				maxPatternNumber += thirdRow[i];
+
+				if (maxPatternNumber != limArray)
+					maxPatternNumber += 1;
+
+			}
+		}
+
+		if (maxPatternNumber > limArray)
+		{
+			maxPatternNumberExceeded = true;
+			maxPatternNumber = 0;
+			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
+		}
+
+	} while (maxPatternNumberExceeded);
+
+	maxPatternNumber = 0;
+	cout << "Ingrese el patron para la cuarta fila:" << endl;
+
+	do
+	{
+		maxPatternNumberExceeded = false;
+
+		cin >> userInput;
+
+		for (int i = 0; i < limArray; i++)
+		{
+			digit = userInput % 10;
+			fourthRow[i] = digit;
+			userInput /= 10;
+		}
+
+		for (int i = 0; i < limArray; i++)
+		{
+			if (fourthRow[i] != 0)
+			{
+
+				maxPatternNumber += fourthRow[i];
+
+				if (maxPatternNumber != limArray)
+					maxPatternNumber += 1;
+
+			}
+		}
+
+		if (maxPatternNumber > limArray)
+		{
+			maxPatternNumberExceeded = true;
+			maxPatternNumber = 0;
+			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
+		}
+
+	} while (maxPatternNumberExceeded);
+
+	maxPatternNumber = 0;
+	cout << "Ingrese el patron para la quinta fila:" << endl;
+
+	do
+	{
+		maxPatternNumberExceeded = false;
+
+		cin >> userInput;
+
+		for (int i = 0; i < limArray; i++)
+		{
+			digit = userInput % 10;
+			fifthRow[i] = digit;
+			userInput /= 10;
+		}
+
+		for (int i = 0; i < limArray; i++)
+		{
+			if (fifthRow[i] != 0)
+			{
+
+				maxPatternNumber += fifthRow[i];
+
+				if (maxPatternNumber != limArray)
+					maxPatternNumber += 1;
+
+			}
+		}
+
+		if (maxPatternNumber > limArray)
+		{
+			maxPatternNumberExceeded = true;
+			maxPatternNumber = 0;
+			cout << "Cantidad incorrecta de casillas. Ingrese nuevamente el patron:" << endl;
+		}
+
+	} while (maxPatternNumberExceeded);
+
+	/*for (int i = limArray - 1; i >= 0; i--)
 	{
 		cout << firstRow[i] << ", ";
 	}
 
-	cout << endl;
+	cout << endl;*/
 
 	for (int i = limArray - 1; i >= 0; i--)
 	{
@@ -85,7 +239,125 @@ int main()
 		}
 	}
 
+	while (tempCounter != limArray)
+	{
+		cout << blankCell;
+		tempCounter++;
+	}
+	
+	tempCounter = 0;
 	cout << endl;
 
+	for (int i = limArray - 1; i >= 0; i--)
+	{
+		if (secondRow[i] != 0)
+		{
+
+			for (int j = 0; j < secondRow[i]; j++)
+			{
+				cout << blackCell;
+				tempCounter++;
+			}
+			if (tempCounter != limArray)
+			{
+				cout << blankCell;
+				tempCounter++;
+			}
+
+		}
+	}
+
+	while (tempCounter != limArray)
+	{
+		cout << blankCell;
+		tempCounter++;
+	}
+
+	tempCounter = 0;
+	cout << endl;
+
+	for (int i = limArray - 1; i >= 0; i--)
+	{
+		if (thirdRow[i] != 0)
+		{
+
+			for (int j = 0; j < thirdRow[i]; j++)
+			{
+				cout << blackCell;
+				tempCounter++;
+			}
+			if (tempCounter != limArray)
+			{
+				cout << blankCell;
+				tempCounter++;
+			}
+
+		}
+	}
+
+	while (tempCounter != limArray)
+	{
+		cout << blankCell;
+		tempCounter++;
+	}
+
+	tempCounter = 0;
+	cout << endl;
+
+	for (int i = limArray - 1; i >= 0; i--)
+	{
+		if (fourthRow[i] != 0)
+		{
+
+			for (int j = 0; j < fourthRow[i]; j++)
+			{
+				cout << blackCell;
+				tempCounter++;
+			}
+			if (tempCounter != limArray)
+			{
+				cout << blankCell;
+				tempCounter++;
+			}
+
+		}
+	}
+
+	while (tempCounter != limArray)
+	{
+		cout << blankCell;
+		tempCounter++;
+	}
+
+	tempCounter = 0;
+	cout << endl;
+
+	for (int i = limArray - 1; i >= 0; i--)
+	{
+		if (fifthRow[i] != 0)
+		{
+
+			for (int j = 0; j < fifthRow[i]; j++)
+			{
+				cout << blackCell;
+				tempCounter++;
+			}
+			if (tempCounter != limArray)
+			{
+				cout << blankCell;
+				tempCounter++;
+			}
+
+		}
+	}
+
+	while (tempCounter != limArray)
+	{
+		cout << blankCell;
+		tempCounter++;
+	}
+
+	tempCounter = 0;
+	cout << endl;
 
 }
