@@ -1,3 +1,5 @@
+## APUNTES
+
 ### CLASE 12/04/2024
 
 Utilizar Pragma y/o if(ndef).   INVESTIGARLOS
@@ -68,5 +70,7 @@ El codigo esta bien en si y la presentiacion también.
 
 Buffer: cuando haces un input con cin, cada espacio que separa palabras o caracteres los guarda en el buffer, y podria saltarse cin futuros. Hay que limpiar el buffer para evitar bugs. Se pueden utilizar las siguientes funciones.
 
+```bash
 cin.ignore(10000);
 cin.ignore(10000, '\n');
+```
