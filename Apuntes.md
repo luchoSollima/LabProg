@@ -68,7 +68,7 @@ El codigo esta bien en si y la presentiacion también.
 
 ### CLASE 31/05/2024
 
-Buffer: cuando haces un input con cin, cada espacio que separa palabras o caracteres los guarda en el buffer, y podria saltarse cin futuros. Hay que limpiar el buffer para evitar bugs. Se pueden utilizar las siguientes funciones.
+Buffer: cuando haces un input con cin, cada espacio que separa palabras o caracteres los guarda en el buffer, y podria saltarse cin futuros. Hay que limpiar el buffer para evitar bugs. Se pueden utilizar las siguientes funciones:
 
 ```bash
 cin.ignore(10000);
