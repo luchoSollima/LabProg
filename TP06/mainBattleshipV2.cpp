@@ -9,12 +9,13 @@ int cpuBattleshipGrid[maxRows][maxCols] = { };
 
 void CpuBattleshipGridGeneration();
 void CpuBattleshipGridPrint();
+void PlayerBattleshipGridPrint();
 void CheckIfHorizontalPlacementPossible(int randomRowCell, int randomColCell);
 void ManualShipPlacement();
 bool CheckIfTwoShipHorizontalPlacementPossible(int startingRowCoordinate, int startingColCoordinate);
 bool CheckIfTwoShipVerticalPlacementPossible(int startingRowCoordinate, int startingColCoordinate);
-void TwoShipHorizontalPlacement();
-void TwoShipVerticalPlacement();
+void TwoShipHorizontalPlacement(int startingRowCoordinate, int startingColCoordinate);
+void TwoShipVerticalPlacement(int startingRowCoordinate, int startingColCoordinate);
 
 void main()
 {
@@ -26,7 +27,7 @@ void main()
 	cout << "1. Manual" << endl;
 	cout << "2. Automatica" << endl;
 
-	CpuBattleshipGridGeneration();
+	//CpuBattleshipGridGeneration();
 
 	do
 	{
@@ -48,9 +49,12 @@ void main()
 		}
 
 	} while (wrongInput);
-	
 
-	CpuBattleshipGridPrint();
+	//CpuBattleshipGridPrint();
+
+	cout << "DEBUG" << endl;
+
+	PlayerBattleshipGridPrint();
 
 }
 
@@ -146,6 +150,18 @@ void CpuBattleshipGridPrint()
 	}
 }
 
+void PlayerBattleshipGridPrint()
+{
+	for (int i = 0; i < maxRows; i++)
+	{
+		for (int j = 0; j < maxCols; j++)
+		{
+			cout << playerBattleshipGrid[i][j] << " ";
+		}
+		cout << endl;
+	}
+}
+
 void CheckIfHorizontalPlacementPossible(int randomRowCell, int randomColCell)
 {
 	cpuBattleshipGrid[randomRowCell][randomColCell];
@@ -177,6 +193,7 @@ void ManualShipPlacement()
 	switch (userShipLengthChoice)
 	{
 	case 2:
+
 		cout << "Ingrese la coordenada Y de la celda correspondiente a uno de los extremos de la nave:" << endl;
 		
 		cin >> startingRowCoordinate;
@@ -198,10 +215,10 @@ void ManualShipPlacement()
 			CheckIfTwoShipVerticalPlacementPossible(startingRowCoordinate, startingColCoordinate);
 
 		if (CheckIfHorizontalPlacementPossible)
-			TwoShipHorizontalPlacement();
+			TwoShipHorizontalPlacement(startingRowCoordinate, startingColCoordinate);
 
 		else if (CheckIfTwoShipVerticalPlacementPossible)
-			TwoShipVerticalPlacement();
+			TwoShipVerticalPlacement(startingRowCoordinate, startingColCoordinate);
 
 		break;
 	case 3:
@@ -233,12 +250,14 @@ bool CheckIfTwoShipVerticalPlacementPossible(int startingRowCoordinate, int star
 		return false;
 }
 
-void TwoShipHorizontalPlacement()
+void TwoShipHorizontalPlacement(int startingRowCoordinate, int startingColCoordinate)
 {
-
+	playerBattleshipGrid[startingRowCoordinate][startingColCoordinate] = 2;
+	playerBattleshipGrid[startingRowCoordinate + 1][startingColCoordinate] = 2;
 }
 
-void TwoShipVerticalPlacement()
+void TwoShipVerticalPlacement(int startingRowCoordinate, int startingColCoordinate)
 {
-
+	playerBattleshipGrid[startingRowCoordinate][startingColCoordinate] = 2;
+	playerBattleshipGrid[startingRowCoordinate][startingColCoordinate + 1] = 2;
 }
