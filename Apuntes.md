@@ -74,3 +74,11 @@ Buffer: cuando haces un input con cin, cada espacio que separa palabras o caract
 cin.ignore(10000);
 cin.ignore(10000, '\n');
 ```
+
+### CLASE 14/06/2024
+
+```bash
+Devoluciones tp5:
+
+
+```
