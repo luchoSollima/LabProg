@@ -52,8 +52,6 @@ void main()
 
 	//CpuBattleshipGridPrint();
 
-	cout << "DEBUG" << endl;
-
 	PlayerBattleshipGridPrint();
 
 }
@@ -194,25 +192,53 @@ void ManualShipPlacement()
 	{
 	case 2:
 
-		cout << "Ingrese la coordenada Y de la celda correspondiente a uno de los extremos de la nave:" << endl;
-		
-		cin >> startingRowCoordinate;
+		do
+		{
 
-		cout << "Ingrese la coordenada X de la celda elegida:" << endl;
+			cout << "Ingrese la coordenada Y de la celda correspondiente a uno de los extremos de la nave:" << endl;
 
-		cin >> startingColCoordinate;
+			cin >> startingRowCoordinate;
 
-		cout << "Desea posicionar su nave de forma horizontal o vertical?" << endl;
-		cout << "1. Horizontal" << endl;
-		cout << "2. Vertical" << endl;
+			cout << "Ingrese la coordenada X de la celda elegida:" << endl;
 
-		cin >> userOption;
+			cin >> startingColCoordinate;
 
-		if (userOption == 1)
-			CheckIfTwoShipHorizontalPlacementPossible(startingRowCoordinate, startingColCoordinate);
+			cout << "Desea posicionar su nave de forma horizontal o vertical?" << endl;
+			cout << "1. Horizontal" << endl;
+			cout << "2. Vertical" << endl;
+
+			cin >> userOption;
+
+			if (userOption == 1)
+			{
+				if (!CheckIfTwoShipHorizontalPlacementPossible(startingRowCoordinate, startingColCoordinate))
+				{
+					cout << "No es posible la colocacion horizontal en esa coordenada." << endl;
+
+					if (CheckIfTwoShipVerticalPlacementPossible(startingRowCoordinate, startingColCoordinate))
+					{
+						cout << "Se colocara verticalmente." << endl;
+						TwoShipVerticalPlacement(startingRowCoordinate, startingColCoordinate);
+					}
+
+					else
+					{
+						cout << "No es posible la colocacion vertical en esa coordenada." << endl;
+					}
+				}
+
+				else
+				{
+					TwoShipHorizontalPlacement(startingRowCoordinate, startingColCoordinate);
+				}
+			}
+
+		} while (true);
 
 		else if (userOption == 2)
+		{
 			CheckIfTwoShipVerticalPlacementPossible(startingRowCoordinate, startingColCoordinate);
+		}
 
 		if (CheckIfHorizontalPlacementPossible)
 			TwoShipHorizontalPlacement(startingRowCoordinate, startingColCoordinate);
