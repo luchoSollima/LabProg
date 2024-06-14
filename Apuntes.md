@@ -80,9 +80,17 @@ cin.ignore(10000, '\n');
 ```bash
 Devoluciones tp5:
 
-
 ```
 
 TP7, entrega el 5/7 y el 12/7, es la clase de recuperacion.
 
 Reentrega de trabajos desaprobados y devolucion en el momento.
+
+En los archivos .cpp va a haber **implementaciones/definiciones**. Si es main.cpp, va a estar el main. Si se llama player.cpp, estaran las funciones del player.
+En los archivos .h, se hacen las declaraciones (excepto el main, que es el punto de entrada, por donde arranca a ejecutarse el programa).
+
+Las funciones cada una tienen firma, para identificarlas inequivocamente.
+
+Los archivos .h incluyen a los cpp, por eso cuando incluis un .h (por ejemplo, math.h) te dan funciones que funcionan.
+
+Error **Unresolved external symbol**, el 99% de los casos es que una firma que no tiene definicion, o una definicion que no tiene firma.
