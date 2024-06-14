@@ -82,3 +82,7 @@ Devoluciones tp5:
 
 
 ```
+
+TP7, entrega el 5/7 y el 12/7, es la clase de recuperacion.
+
+Reentrega de trabajos desaprobados y devolucion en el momento.
