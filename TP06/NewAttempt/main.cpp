@@ -1,100 +1,131 @@
-// Luciano Sollima - TrabajoPráctico_06 - Fecha Desde: 14/06/2024 - FechaHasta: 22/06/2024
+// Luciano Sollima - TrabajoPráctico_06 - Fecha Desde: 31/05/2024 - FechaHasta: 22/06/2024
 
 #include <iostream>
+#include "utils.h"
 using namespace std;
-
-const int maxRows = 10;
-const int maxCols = 10;
-
-const char emptyCell = '-';
-const char shipCell = (char)178;
 
 char playerBattleshipGrid[maxRows][maxCols] = { };
 char cpuBattleshipGrid[maxRows][maxCols] = { };
+char dynamicPlayerBattleshipGrid[maxRows][maxCols] = { };
+char dynamicCpuBattleshipGrid[maxRows][maxCols] = { };
 
-void InitializeBoards();
-void PrintBoards();
-bool isValidPosition(int x, int y, int size, bool horizontal);
-
-void main()
+int main()
 {
 	srand(time(0));
-	int x = 0;
-	int y = 0;
-	int size = 0;
-	bool horizontal = false;
+	int shipSize = 5;
+	int userInput = 0;
+	bool fiveShipPlaced = false;
+	bool fourthShipPlaced = false;
+	bool threeShipPlaced = false;
+	bool twoShipPlaced = false;
 
+	PopulateEmptyBattleshipGrid(cpuBattleshipGrid);
+	PopulateEmptyBattleshipGrid(playerBattleshipGrid);
+	PopulateEmptyBattleshipGrid(dynamicPlayerBattleshipGrid);
+	PopulateEmptyBattleshipGrid(dynamicCpuBattleshipGrid);
 
-	InitializeBoards();
-
-	isValidPosition(x, y, size, horizontal);
-
-	PrintBoards();
-}
-
-void InitializeBoards()
-{
-	for (int i = 0; i < maxRows; i++)
+	do
 	{
-		for (int j = 0; j < maxCols; j++)
-		{
-			playerBattleshipGrid[i][j] = emptyCell;
-			cpuBattleshipGrid[i][j] = emptyCell;
-		}
-	}
-}
+		AutomaticShipPlacement(cpuBattleshipGrid, shipSize);
 
-void PrintBoards()
-{
-	for (int i = 0; i < maxRows; i++)
+	} while (shipSize > 1);
+
+	cout << "Bienvenida e Instrucciones" << endl;
+
+	cout << "Como desea posicionar sus naves?" << endl;
+	cout << "1. Automatica" << endl;
+	cout << "2. Manual" << endl;
+
+	cin >> userInput;
+
+	switch (userInput)
 	{
-		for (int j = 0; j < maxCols; j++)
+	case 1:
+		shipSize = 5;
+		do
 		{
-			cout << playerBattleshipGrid[i][j];
-		}
-		cout << endl;
+			AutomaticShipPlacement(playerBattleshipGrid, shipSize);
+
+		} while (shipSize > 1);
+
+		break;
+	case 2:
+
+		do
+		{
+			system("cls");
+			PrintGrid(playerBattleshipGrid);
+
+			cout << "Que nave desea colocar?" << endl;
+			if (!twoShipPlaced)
+				cout << "1. Crucero (dos celdas)" << endl;
+			if (!threeShipPlaced)
+				cout << "2. Submarino (tres celdas)" << endl;
+			if (!fourthShipPlaced)
+				cout << "3. Buque (cuatro celdas)" << endl;
+			if (!fiveShipPlaced)
+				cout << "4. Portaaviones (cinco celdas)" << endl;
+
+			cin >> userInput;
+
+			switch (userInput)
+			{
+			case 1:
+				shipSize = 2;
+
+				ManualShipPlacement(playerBattleshipGrid, shipSize);
+
+				twoShipPlaced = true;
+
+				break;
+			case 2:
+				shipSize = 3;
+
+				ManualShipPlacement(playerBattleshipGrid, shipSize);
+
+				threeShipPlaced = true;
+
+				break;
+			case 3:
+				shipSize = 4;
+
+				ManualShipPlacement(playerBattleshipGrid, shipSize);
+
+				fourthShipPlaced = true;
+
+				break;
+			case 4:
+				shipSize = 5;
+
+				ManualShipPlacement(playerBattleshipGrid, shipSize);
+
+				fiveShipPlaced = true;
+
+				break;
+			}
+
+		} while (!fiveShipPlaced || !fourthShipPlaced || !threeShipPlaced || !twoShipPlaced);
+
+		break;
 	}
 
-	cout << endl << endl;
+	cout << "Comienzo del juego" << endl << endl;
 
-	for (int i = 0; i < maxRows; i++)
+	system("pause");
+
+	do
 	{
-		for (int j = 0; j < maxCols; j++)
-		{
-			cout << cpuBattleshipGrid[i][j];
-		}
-		cout << endl;
-	}
-}
+		cout << "Dynamic:" << endl;
+		PrintGrid(dynamicPlayerBattleshipGrid);
+		cout << endl << endl << "User" << endl;
+		PrintGrid(playerBattleshipGrid);
 
-bool isValidPosition(int x, int y, int size, bool horizontal) 
-{
-	if (horizontal) 
-	{
+		PlayerTurn(cpuBattleshipGrid, dynamicPlayerBattleshipGrid);
 
-		if (x + size > maxCols)
-			return false;
+		if (ThereAreRemainingShips(cpuBattleshipGrid))
+			CpuTurn(playerBattleshipGrid, dynamicCpuBattleshipGrid);
 
-		for (int i = 0; i < size; ++i) 
-		{
-			if (cpuBattleshipGrid[y][x + i] != emptyCell)
-				return false;
-		}
+	} while (ThereAreRemainingShips(cpuBattleshipGrid) && ThereAreRemainingShips(playerBattleshipGrid));
 
-	}
-	else 
-	{
 
-		if (y + size > maxRows) 
-			return false;
-
-		for (int i = 0; i < size; ++i) 
-		{
-			if (cpuBattleshipGrid[y + i][x] != emptyCell)
-				return false;
-		}
-
-	}
-
-	return true;
 }
