@@ -55,7 +55,7 @@ int Player1TurnBeforeSaving(int dieFace, int minSavedScore, int& player1TempScor
 
 int Player2TurnBeforeSaving(int dieFace, int minSavedScore, int& player2TempScore)
 {
-	cout << "TURNO JUGADOR 1:" << endl;
+	cout << "TURNO JUGADOR 2:" << endl;
 	cout << "Puntaje en el turno: " << player2TempScore << endl;
 	cout << "\nPresione cualquier tecla para lanzar el dado!\n" << endl;
 
@@ -68,7 +68,7 @@ int Player2TurnBeforeSaving(int dieFace, int minSavedScore, int& player2TempScor
 	if (dieFace == 1)
 	{
 		player2TempScore = 0;
-		cout << "Perdiste los puntos de la ronda! Turno del jugador 2." << endl << endl;
+		cout << "Perdiste los puntos de la ronda! Turno del jugador 1." << endl << endl;
 		system("pause");
 		system("cls");
 		return player2TempScore;
