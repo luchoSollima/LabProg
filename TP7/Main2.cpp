@@ -42,7 +42,7 @@ void main()
 			{																										
 				Player1TurnBeforeSaving(dieFace, minSavedScore, player1TempScore);
 
-			} while (player1TempScore < minSavedScore);
+			} while (player1TempScore < minSavedScore && player1TempScore != 0);
 
 			// Player 2 turn.
 
@@ -50,7 +50,7 @@ void main()
 			{																										
 				Player2TurnBeforeSaving(dieFace, minSavedScore, player2TempScore);
 
-			} while (player2TempScore < minSavedScore);
+			} while (player2TempScore < minSavedScore && player2TempScore != 0);
 
 		} while (player1TempScore < minSavedScore && player2TempScore < minSavedScore);
 
