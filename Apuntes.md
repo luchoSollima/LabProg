@@ -94,3 +94,16 @@ Las funciones cada una tienen firma, para identificarlas inequivocamente.
 Los archivos .h incluyen a los cpp, por eso cuando incluis un .h (por ejemplo, math.h) te dan funciones que funcionan.
 
 Error **Unresolved external symbol**, el 99% de los casos es que una firma que no tiene definicion, o una definicion que no tiene firma.
+
+### CLASE 05/07/2024
+
+```bash
+Devoluciones tp6:
+
+Esta bien la entrega y el tp dentro de todo, prolijo. Lo mas grave es el tema de que despues de jugar una partida, no podes jugar otra. Te corta en el primer turno.
+El otro problema es que hay muchas funciones parecida, en ese caso habria que usar loops, como un for.
+Podria haber más comentarios.
+Habia separación de archivos y no habia que hacerlo.
+Aprobado con 4.
+
+```
